@@ -1,0 +1,33 @@
+.header-island{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.links-list{
+    background-color: #242424;
+    color: #E9E9E9;
+    width: 46rem;
+    margin: 0;
+    padding: 0;
+    padding-inline: 3.5rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 46px;
+    height: 4rem
+}
+
+.links-list > li {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-shadow: 0 0 16px #E9E9E930;
+}
+
+
+.links-list > li > a{
+    color: #E9E9E9;
+    text-decoration: none;
+}
