@@ -7,50 +7,44 @@ import {
     Title,
   } from 'chart.js';
 
+import { Doughnut } from 'react-chartjs-2';
 
-import { Pie } from 'react-chartjs-2';
 
-// Chart data
-const data = {
-    labels: ['Rent', 'Food', 'Utilities', 'Entertainment'],
-    datasets: [
-      {
-        label: 'Expenses',
-        data: [800, 300, 150, 200],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.6)',
-          'rgba(54, 162, 235, 0.6)',
-          'rgba(255, 206, 86, 0.6)',
-          'rgba(75, 192, 192, 0.6)',
-        ],
-        borderColor: 'white',
-        borderWidth: 1,
-      },
-    ],
-  };
-  
-  // Chart options
-const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Monthly Sales Chart',
-      },
+export const data = {
+  labels: ['Rent', 'Nutrition', 'Other expenses'],
+  datasets: [
+    {
+      label: 'you spent $',
+      data: [1382, 453, 983],
+      backgroundColor: [
+        '#4ECDC4',
+        '#FF6B6B',
+        '#EDEDED',
+      ],
+      hoverBackgroundColor: [
+        '#33E6DA', // Custom hover color for Rent
+        '#FF5353', // Custom hover color for Nutrition
+        '#F1F1F1', // Custom hover color for Other expenses
+      ],
+      hoverOffset: 20, // Offset when hovering
+      borderWidth: 0,
     },
+  ],
 };
+
   
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
+
 function Chart () {
+
+  const total = data.datasets[0].data.reduce((sum, value) => value + sum, 0)
+
     return(
         <>
-            <h1 className='overview'>You spent 2 352 $ this month.</h1>
-            <Pie data={data} options={options} />
+            <h1 className='overview'>You spent {total}$ this month.</h1>
+            <Doughnut data={data} />
         </>
     )
 

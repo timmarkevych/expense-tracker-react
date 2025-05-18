@@ -1,5 +1,6 @@
 import Header from './components/jsx/header'
 import Chart from './components/jsx/chart'
+import Extra from './components/jsx/extra'
 import './App.css'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <Chart />
+      <Extra />
     </>
   )
 }
